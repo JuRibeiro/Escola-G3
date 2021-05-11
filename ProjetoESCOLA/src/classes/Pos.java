@@ -17,15 +17,22 @@ public class Pos extends Estudante {
 	}
 
 	public void pedirCreditoPos(double credito) {
-		do {
-			if (this.credito >= credito) {
-				super.adicionarNota(credito);
-				break;
-			} else {
-				System.out.println("Valor de créditos incorreto.");
-				System.out.printf("Você possui %.2f", this.credito);
-			}
-		} while (this.credito != 0f);
+		if (this.credito >= credito) {
+			super.adicionarNota(credito);
+		} else {
+			System.out.println("Valor de créditos incorreto.");
+			System.out.printf("Você possui %.2f\n", this.credito);
+		}
+	}
+
+	@Override
+	public void adicionarNota(double pontos) {
+		super.adicionarNota(pontos);
+	}
+
+	@Override
+	public void tirarNota(double pontos) {
+		super.tirarNota(pontos);
 	}
 
 }
