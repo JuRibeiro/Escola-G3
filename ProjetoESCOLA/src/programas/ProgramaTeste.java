@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 import classes.Basico;
 import classes.Estudante;
+import classes.Pos;
 
 public class ProgramaTeste {
 
@@ -11,6 +12,7 @@ public class ProgramaTeste {
 	{
 		Scanner leia = new Scanner (System.in);
 		
+<<<<<<< HEAD
 		System.out.println("Digite o nome do aluno");
 		String nome = leia.next();
 		System.out.println("Informe a matricula");
@@ -31,6 +33,13 @@ public class ProgramaTeste {
 		
 		aluno1.bonusAniversario(diaAtual);
 		System.out.println("PONTOS após metodo: "+aluno1.getPontos());
+=======
+		Pos aluno1 = new Pos(123,"111.222.333.444-11");
+		aluno1.adicionarNota(5);
+		System.out.printf("nota %.2f: \n", aluno1.getPontos());
+		aluno1.tirarNota(11);
+		System.out.printf("nota %.2f: ", aluno1.getPontos());
+>>>>>>> da75bfef52c6ada2e7bfa46bd79c60af9999124d
 	}
 
 }
