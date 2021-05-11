@@ -96,7 +96,11 @@ public class Estudante
 	//tirar nota
 	public void tirarNota (double pontos)
 	{
+		if(this.pontos>=pontos) {
 		this.pontos = this.pontos - pontos;
+		} else {
+			System.out.println("Movimentação impossível");
+		}
 	}
 
 }

@@ -2,6 +2,8 @@ package programas;
 
 import java.util.Scanner;
 
+import classes.Basico;
+
 public class ProgramaMenu {
 
 	public static void main(String[] args) {
@@ -10,7 +12,14 @@ public class ProgramaMenu {
 		char ensino;
 		boolean ativo;
 		char auxAtivo;
-		//int matricula, String cpf, double pontos, boolean status CONSTRUTOR ESTUDANTE
+		char tipoMovimento;
+		int MOVIMENTACOES = 3; 
+		int diaAniversario = 0;
+		int dia =  0;
+		double nota = 0;
+		char op;
+		
+		//int matricula, String cpf, boolean status CONSTRUTOR ESTUDANTE
 
 			System.out.println("ESCOLA GERAÇÃO G3\nAssista, Aprenda, Execute\n");
 			System.out.println("1-BÁSICO\n2-MÉDIO\n3-GRADUAÇÃO\n4-PÓS\n5-MESTRADO\n6-SAIR");
@@ -25,15 +34,54 @@ public class ProgramaMenu {
 			ativo = (auxAtivo == '1') ? true : false;
 					if(ensino =='1') {
 						System.out.println("Digite o dia do seu aniversário: ");
-						int diaAniversario = leia.nextInt();
+						diaAniversario = leia.nextInt();
 						System.out.println("Digite que dia é hoje: ");
-						int dia = leia.nextInt();
+						dia = leia.nextInt();
 					}
 			
 			System.out.println("\n\n\n");
 			System.out.println("ESCOLA GERAÇÃO G3\nAssista, Aprenda, Execute\n");
 			
 			
+			//instanciando conforme atributos
+				if(ensino == '1') {
+					
+					Basico aluno1 = new Basico(matricula, cpf, ativo, diaAniversario);
+					
+					for(int x = 0; x <MOVIMENTACOES; x++) {
+						
+						System.out.println("Nota do aluno: "+aluno1.getPontos());
+						System.out.println("Mov."+(x+1)+" - Digite 1 para adicionar e 2 para retirar nota: ");
+						tipoMovimento = leia.next().charAt(0);
+							if(tipoMovimento == '1') {
+								System.out.println("Valor a ser adicionado: ");
+								nota = leia.nextDouble();
+								aluno1.adicionarNota(nota);
+							} else {
+								System.out.println("Valor a ser retirado: ");
+								nota = leia.nextDouble();
+								aluno1.tirarNota(nota);
+							}
+							System.out.println("Continuar? 1-Sim 2-Não");
+							op = leia.next().charAt(0); 
+							x = (op == '1') ? x : 10;
+							
+							
+					}	System.out.println("Nota do aluno total: "+aluno1.getPontos());
+					
+					System.out.println("Verificar bônus de aniversário de 10%? 1-Sim 2-Não");
+					op = leia.next().charAt(0);
+					if (op == '1') {
+						aluno1.bonusAniversario(dia);
+						System.out.println("Bônus adicionado! Nota final: "+aluno1.getPontos());
+					} else {
+						System.out.println("Nota final: "+aluno1.getPontos());
+					}
+				}
+			
+			
+			
+
 			
 			
 	}

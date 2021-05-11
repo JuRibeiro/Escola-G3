@@ -22,7 +22,7 @@ public class ProgramaTeste {
 		System.out.println("Nota inicial: ");
 		double nota = leia.nextDouble();
 		
-		Basico aluno1 = new Basico (matricula, cpf, dia); //instanciando o objeto
+		Basico aluno1 = new Basico (matricula, cpf, status, dia); //instanciando o objeto
 		aluno1.setNome(nome);
 		aluno1.adicionarNota(10);
 		System.out.println("PONTOS ATUAIS: "+aluno1.getPontos());
