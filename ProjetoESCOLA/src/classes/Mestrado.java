@@ -6,6 +6,7 @@ public class Mestrado extends Estudante{
 	public Mestrado(int matricula, String cpf, int nota) {
 		super(matricula, cpf);
 		this.nota = nota;
+		//fazer
 	}
 	
 }
