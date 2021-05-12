@@ -12,7 +12,7 @@ public class ProgramaTeste {
 	{
 		Scanner leia = new Scanner (System.in);
 		
-<<<<<<< HEAD
+//<<<<<<< HEAD
 		System.out.println("Digite o nome do aluno");
 		String nome = leia.next();
 		System.out.println("Informe a matricula");
@@ -24,7 +24,7 @@ public class ProgramaTeste {
 		System.out.println("Nota inicial: ");
 		double nota = leia.nextDouble();
 		
-		Basico aluno1 = new Basico (matricula, cpf, status, dia); //instanciando o objeto
+	/*	Basico aluno1 = new Basico (matricula, cpf, status, dia); //instanciando o objeto
 		aluno1.setNome(nome);
 		aluno1.adicionarNota(10);
 		System.out.println("PONTOS ATUAIS: "+aluno1.getPontos());
@@ -40,6 +40,7 @@ public class ProgramaTeste {
 		aluno1.tirarNota(11);
 		System.out.printf("nota %.2f: ", aluno1.getPontos());
 >>>>>>> da75bfef52c6ada2e7bfa46bd79c60af9999124d
+*/
 	}
 
 }

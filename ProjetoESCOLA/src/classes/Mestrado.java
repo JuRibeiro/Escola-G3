@@ -1,12 +1,15 @@
 package classes;
 
 public class Mestrado extends Estudante{
-	int nota;
+	private double usarCreditoMestrado;
 
-	public Mestrado(int matricula, String cpf, int nota) {
+	public Mestrado(int matricula, String cpf) {
 		super(matricula, cpf);
-		this.nota = nota;
-		//fazer
 	}
+
+	public double getUsarCreditoMestrado() {
+		return usarCreditoMestrado;
+	}
+
 	
 }
