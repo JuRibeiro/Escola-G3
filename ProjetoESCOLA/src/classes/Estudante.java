@@ -5,7 +5,7 @@ public abstract class Estudante
 	//atributos - sempre definir se é publico (segurança - private)
 	private int matricula;
 	private String cpf;
-	private double pontos;
+	protected double pontos;
 	private boolean status;
 	private String nome;
 	
