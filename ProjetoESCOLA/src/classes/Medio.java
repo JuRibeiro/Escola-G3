@@ -56,7 +56,7 @@ public class Medio extends Estudante
 			System.out.printf("Atividade %d, Nota: %.2f \n", (i+1) , lista.get(i) );
 		}
 		quantidadeImpressao = quantidadeImpressao - 1;
-		System.out.printf("Você tem mais %d impressões de boletim", quantidadeImpressao);
+		System.out.printf("\nVocê tem mais %d impressões de boletim", quantidadeImpressao);
 	}
 	
 

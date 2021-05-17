@@ -3,10 +3,12 @@ package programas;
 import java.util.Scanner;
 
 import classes.Basico;
+import classes.Medio;
 
 public class ProgramaMenu {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) 
+	{
 		
 		Scanner leia = new Scanner(System.in);
 		char ensino;
@@ -79,11 +81,61 @@ public class ProgramaMenu {
 					}
 				}
 			
-			
-			
+				
+				char pedirBoletim = ' ';
+				
+				if(ensino == '2') 
+				{
+					
+					Medio aluno1 = new Medio (matricula, cpf, ativo, pedirBoletim);
+					//nt matricula, String cpf, boolean status, char pedirBoletim
+					
+					for(int x = 0; x <MOVIMENTACOES; x++) {
+						
+						System.out.println("Nota do aluno: "+aluno1.totalNota());
+						System.out.println("Mov."+(x+1)+" - Digite 1 para adicionar e 2 para retirar nota: ");
+						tipoMovimento = leia.next().charAt(0);
+							if(tipoMovimento == '1') {
+								System.out.println("Valor a ser adicionado: ");
+								nota = leia.nextDouble();
+								aluno1.adicionarNota(nota);
+							} else {
+								System.out.println("Valor a ser retirado: ");
+								nota = leia.nextDouble();
+								aluno1.tirarNota(nota);
+							}
+							
+							
+							System.out.println("Continuar? 1-Sim 2-Não");
+							op = leia.next().charAt(0); 
+							x = (op == '1') ? x : 10;
+							
+							
+					}	System.out.println("Nota do aluno total: "+aluno1.totalNota());
+					
+					do
+					{
+						System.out.println("\nDeseja solicitar o boletim? S-sim, N-Nao ");
+						op = leia.next().toUpperCase().charAt(0);
+						
+						if (op == 'S') 
+						{
+							
+						aluno1.impressaoBoletim();
+						
+						}
+						else
+						{
+							break;
+						}
+					}
+					while (aluno1.getQuantidadeImpressao()!=0 );	
 
-			
-			
+				}
+
+				
+				
+				
+		leia.close();
 	}
-
 }
